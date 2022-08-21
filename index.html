@@ -1,11 +1,20 @@
+
 <html>
-<head>
+  <head>
 <title>Documente Mihai Site</title>
 
 <head>
 <body>
-  <center><font color="red"><h1> Redirect in 5 seconds </h1></font></center>
-<meta http-equiv="Refresh" content="5; url='https://www.mihailungu.ml'" />
+   <center><font color="red"> <h1> redirect in  <div id="counter">5</div> to www.mihailungu.ml
+    <script>
+        setInterval(function() {
+            var div = document.querySelector("#counter");
+            var count = div.textContent * 1 - 1;
+            div.textContent = count;
+            if (count <= 0) {
+                window.location.replace("https://www.mihailungu.ml");
+            }
+        }, 1000);
+    </script> </h1></font><center>
 </body>
-
 </html>
