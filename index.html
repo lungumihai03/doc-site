@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Documente Mihai Site</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+		
+		@keyframes rotate-reverse {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-360deg); }
+        }
+		
+        body {
+            font-family: Open Sans, sans-serif;
+            color: #121212;
+            margin: 0;
+            padding: 0;
+			cursor: url('cursor.png'), auto;
+        }
+		 
+		
+    
+    
+
+   
+
+        #counter {
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .redirect-text {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+			
+        }
+
+        .responsive-image {
+            animation: rotate-reverse 3s infinite linear;
+            max-width: 100%;
+            height: auto;
+        }
+
+        
+    </style>
+</head>
+<body>
+    
+    <div class="redirect-text">Redirecting in <span id="counter-value">10</span> seconds to www.mihailungu.ml</div>
+    <div class="image-container">
+        <img src="pila.png" alt="Your Image" class="responsive-image" style="width: 370px; height: 370px"/>
+    </div>
+
+    <script>
+        setInterval(function() {
+            var counterValueElement = document.getElementById("counter-value");
+            var counterValue = parseInt(counterValueElement.textContent);
+            counterValue--;
+            counterValueElement.textContent = counterValue;
+            if (counterValue <= 0) {
+                window.location.replace("https://www.mihailungu.ml");
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
